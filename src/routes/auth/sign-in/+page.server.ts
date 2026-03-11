@@ -1,8 +1,8 @@
+import { fail } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms";
 import { zod4 } from "sveltekit-superforms/adapters";
-import { signInEmailSchema } from "./sign-in.schema";
-import { fail } from "@sveltejs/kit";
 import type { Actions, PageServerLoad } from "./$types";
+import { signInEmailSchema } from "./sign-in.schema";
 
 export const load: PageServerLoad = async () => {
   return {
@@ -15,8 +15,6 @@ export const actions: Actions = {
     const form = await superValidate(request, zod4(signInEmailSchema));
 
     if (!form.valid) return fail(400, { form });
-
-    // lógica de autenticação...
 
     return { form };
   },

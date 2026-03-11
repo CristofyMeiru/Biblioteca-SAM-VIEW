@@ -7,6 +7,7 @@ import { signInEmailSchema } from "./sign-in.schema";
 export const load: PageServerLoad = async () => {
   return {
     form: await superValidate(zod4(signInEmailSchema)),
+    title: "Entrar",
   };
 };
 

@@ -12,10 +12,6 @@
 </svelte:head>
 
 <main>
-  <!-- Grid background -->
-  <div class="absolute inset-0 pointer-events-none grid-bg"></div>
-
-  <!-- Orbs -->
   <div
     class="absolute w-96 h-96 rounded-full top-10 -left-24 blur-3xl bg-green-600/20 pointer-events-none"
   ></div>
@@ -26,7 +22,6 @@
   <Card.Root
     class="card-enter relative z-10 w-full max-w-5xl shadow-2xl overflow-hidden p-0 gap-0"
   >
-    <!-- Header -->
     <Card.Header class="bg-background border-b px-8 py-4">
       <div class="flex justify-between items-center">
         <div class="flex items-center gap-3">
@@ -41,14 +36,11 @@
       </div>
     </Card.Header>
 
-    <!-- Body -->
     <div class="flex min-h-120">
-      <!-- Form -->
       <Card.Content class="flex-1 flex items-center justify-center px-10 py-12">
         <SignInForm {data} />
       </Card.Content>
 
-      <!-- Illustration -->
       <aside
         class="hidden md:flex flex-1 flex-col items-center justify-center gap-6 bg-muted border-l border-border px-10 py-12"
       >
@@ -74,17 +66,7 @@
   @reference "@src/routes/layout.css";
 
   main {
-    background: linear-gradient(135deg, #052e16 0%, #0a3d1f 50%, #0d4a25 100%);
     @apply relative w-full min-h-screen flex justify-center items-center p-4 overflow-hidden;
-  }
-
-  .grid-bg {
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.03) 1px,
-        transparent 1px
-      ),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
   }
 
   @keyframes slideUp {

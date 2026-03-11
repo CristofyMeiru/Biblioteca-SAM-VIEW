@@ -81,10 +81,6 @@
   const navLinks = ["sobre", "recursos", "acesso"];
 </script>
 
-<svelte:head>
-  <title>Biblioteca SAM · EEEP Salomão Alves de Moura</title>
-</svelte:head>
-
 <!-- NAVBAR -->
 <nav
   class=" bg-green-950 relative z-50 flex items-center justify-between px-6 md:px-12 py-5"
@@ -118,7 +114,7 @@
 <!-- HERO -->
 <section
   class="relative min-h-screen flex items-center overflow-hidden pb-32 pt-10"
-  style="background: linear-gradient(135deg, #052e16 0%, #0a3d1f 50%, #0d4a25 100%);"
+  
 >
   <div
     class="absolute w-96 h-96 rounded-full top-10 -left-24 blur-3xl bg-green-600/20 pointer-events-none"
@@ -126,7 +122,6 @@
   <div
     class="absolute w-72 h-72 rounded-full bottom-20 right-10 blur-3xl bg-orange-500/15 pointer-events-none"
   ></div>
-  <div class="absolute inset-0 pointer-events-none grid-bg"></div>
 
   <div
     class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full grid md:grid-cols-2 gap-12 items-center"
@@ -483,14 +478,5 @@
 
   .book-float {
     animation: float 4s ease-in-out infinite;
-  }
-
-  .grid-bg {
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.03) 1px,
-        transparent 1px
-      ),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
   }
 </style>

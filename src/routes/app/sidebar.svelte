@@ -6,7 +6,6 @@
     IconArrowsExchange,
     IconBooks,
     IconBookUpload,
-    IconChartBar,
     IconCornerDownLeft,
     IconLayoutDashboard,
     IconPlus,
@@ -16,10 +15,10 @@
   } from "@tabler/icons-svelte";
 
   const navItems = [
-    { icon: IconLayoutDashboard, label: "Dashboard", href: "/app" },
-    { icon: IconBooks, label: "Acervo", href: "/app/acervo" },
-    { icon: IconUsers, label: "Usuários", href: "/app/usuarios" },
-    { icon: IconArrowsExchange, label: "Empréstimos", href: "/app/emprestimos" },
+    { icon: IconLayoutDashboard, label: "Dashboard", href: "/app/dashboard" },
+    { icon: IconBooks, label: "Acervo", href: "/app/books" },
+    { icon: IconUsers, label: "Usuários", href: "/app/users" },
+    { icon: IconArrowsExchange, label: "Empréstimos", href: "/app/loans" },
     { icon: IconSchool, label: "Cursos", href: "/app/courses" },
   ] as const;
 
@@ -73,10 +72,12 @@
         <Sidebar.Menu>
           {#each navItems as item}
             <Sidebar.MenuItem>
-              <Sidebar.MenuButton isActive={isActive(item.href)} class="gap-3">
-                <svelte:component this={item.icon} size={18} stroke={1.8} />
-                <span>{item.label}</span>
-              </Sidebar.MenuButton>
+              <a href={item.href}>
+                <Sidebar.MenuButton isActive={isActive(item.href)} class="gap-3">
+                  <svelte:component this={item.icon} size={18} stroke={1.8} />
+                  <span>{item.label}</span>
+                </Sidebar.MenuButton>
+              </a>
             </Sidebar.MenuItem>
           {/each}
         </Sidebar.Menu>
@@ -91,10 +92,12 @@
         <Sidebar.Menu>
           {#each navActions as action}
             <Sidebar.MenuItem>
-              <Sidebar.MenuButton isActive={isActive(action.href)} class="gap-3">
-                <svelte:component this={action.icon} size={18} stroke={1.8} />
-                <span>{action.label}</span>
-              </Sidebar.MenuButton>
+              <a href={action.href}>
+                <Sidebar.MenuButton isActive={isActive(action.href)} class="gap-3">
+                  <svelte:component this={action.icon} size={18} stroke={1.8} />
+                  <span>{action.label}</span>
+                </Sidebar.MenuButton>
+              </a>
             </Sidebar.MenuItem>
           {/each}
         </Sidebar.Menu>
